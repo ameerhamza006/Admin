@@ -1,0 +1,192 @@
+[18-Apr-2020 03:56:34 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/AddonProduct.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/AddonProduct.php on line 7
+[18-Apr-2020 03:56:36 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/distance123/public_html/foodapp/app/Admin.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Admin.php on line 9
+[18-Apr-2020 03:56:37 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Card.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Card.php on line 7
+[18-Apr-2020 03:56:44 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/CartAddon.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/CartAddon.php on line 7
+[18-Apr-2020 03:56:48 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/CategoryImage.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/CategoryImage.php on line 8
+[18-Apr-2020 03:56:52 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Category.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Category.php on line 7
+[18-Apr-2020 03:56:52 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Addon.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Addon.php on line 7
+[18-Apr-2020 03:56:53 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Cuisine.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Cuisine.php on line 9
+[18-Apr-2020 03:56:54 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/CustomPush.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/CustomPush.php on line 7
+[18-Apr-2020 03:56:57 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Document.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Document.php on line 7
+[18-Apr-2020 03:57:01 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/EmailTemplate.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/EmailTemplate.php on line 8
+[18-Apr-2020 03:57:02 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/EnquiryTransporter.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/EnquiryTransporter.php on line 7
+[18-Apr-2020 03:57:02 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/ManageApp.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/ManageApp.php on line 7
+[18-Apr-2020 03:57:04 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Favorite.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Favorite.php on line 7
+[18-Apr-2020 03:57:06 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/NoticeBoard.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/NoticeBoard.php on line 7
+[18-Apr-2020 03:57:08 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Notification.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Notification.php on line 7
+[18-Apr-2020 03:57:11 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/OrderDispute.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/OrderDispute.php on line 8
+[18-Apr-2020 03:57:13 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Order.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Order.php on line 8
+[18-Apr-2020 03:57:14 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/OrderDisputeComment.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/OrderDisputeComment.php on line 7
+[18-Apr-2020 03:57:17 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/OrderDisputeHelp.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/OrderDisputeHelp.php on line 7
+[18-Apr-2020 03:57:20 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/OrderInvoice.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/OrderInvoice.php on line 8
+[18-Apr-2020 03:57:20 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/OrderTiming.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/OrderTiming.php on line 7
+[18-Apr-2020 03:57:20 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/OrderRating.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/OrderRating.php on line 8
+[18-Apr-2020 03:57:22 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Product.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Product.php on line 8
+[18-Apr-2020 03:57:27 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/ProductImage.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/ProductImage.php on line 8
+[18-Apr-2020 03:57:28 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/PromocodeUsage.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/PromocodeUsage.php on line 8
+[18-Apr-2020 03:57:28 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Promocode.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Promocode.php on line 8
+[18-Apr-2020 03:57:28 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/ProductPrice.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/ProductPrice.php on line 8
+[18-Apr-2020 03:57:29 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/RequestFilter.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/RequestFilter.php on line 7
+[18-Apr-2020 03:57:31 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Restuarant.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Restuarant.php on line 7
+[18-Apr-2020 03:57:33 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Settings.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Settings.php on line 7
+[18-Apr-2020 03:57:38 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/distance123/public_html/foodapp/app/Shop.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Shop.php on line 11
+[18-Apr-2020 03:57:40 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/ShopBanner.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/ShopBanner.php on line 7
+[18-Apr-2020 03:57:43 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/ShopTiming.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/ShopTiming.php on line 7
+[18-Apr-2020 03:57:45 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/SurgePricing.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/SurgePricing.php on line 7
+[18-Apr-2020 03:57:45 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/distance123/public_html/foodapp/app/Transporter.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Transporter.php on line 11
+[18-Apr-2020 03:57:46 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/TransporterDocument.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/TransporterDocument.php on line 7
+[18-Apr-2020 03:57:47 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/TransporterLocation.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/TransporterLocation.php on line 8
+[18-Apr-2020 03:57:48 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/TransporterShift.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/TransporterShift.php on line 8
+[18-Apr-2020 03:57:49 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/TransporterShiftTiming.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/TransporterShiftTiming.php on line 8
+[18-Apr-2020 03:57:49 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/TransporterVehicle.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/TransporterVehicle.php on line 7
+[18-Apr-2020 03:57:49 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/UserAddress.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/UserAddress.php on line 8
+[18-Apr-2020 03:57:49 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/distance123/public_html/foodapp/app/User.php:10
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/User.php on line 10
+[18-Apr-2020 03:57:50 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/UserCart.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/UserCart.php on line 8
+[18-Apr-2020 03:57:50 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/WalletPassbook.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/WalletPassbook.php on line 7
+[18-Apr-2020 03:57:51 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/newsletter.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/newsletter.php on line 7
+[18-Apr-2020 03:57:51 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Database\Eloquent\Model' not found in /home/distance123/public_html/foodapp/app/Zone.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Zone.php on line 8
+[16-May-2020 15:18:34 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Illuminate\Foundation\Auth\User' not found in /home/distance123/public_html/foodapp/app/Admin.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/app/Admin.php on line 9

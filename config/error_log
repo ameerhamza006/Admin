@@ -1,0 +1,56 @@
+[18-Apr-2020 03:58:20 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/app.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/app.php on line 15
+[18-Apr-2020 03:58:29 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/broadcasting.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/broadcasting.php on line 18
+[18-Apr-2020 03:58:30 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function storage_path() in /home/distance123/public_html/foodapp/config/excel.php:57
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/excel.php on line 57
+[18-Apr-2020 03:58:30 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/database.php on line 16
+[18-Apr-2020 03:58:30 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/cache.php on line 18
+[18-Apr-2020 03:58:34 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/filesystems.php on line 16
+[18-Apr-2020 03:58:38 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/mail.php on line 19
+[18-Apr-2020 03:58:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/push-notification.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/push-notification.php on line 6
+[18-Apr-2020 03:58:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function app_path() in /home/distance123/public_html/foodapp/config/pushnotification.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/pushnotification.php on line 15
+[18-Apr-2020 03:58:40 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/queue.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/queue.php on line 18
+[18-Apr-2020 03:58:43 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/services.php on line 18
+[18-Apr-2020 03:58:43 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/distance123/public_html/foodapp/config/session.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/session.php on line 19
+[18-Apr-2020 03:58:43 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function storage_path() in /home/distance123/public_html/foodapp/config/settings.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/settings.php on line 9
+[18-Apr-2020 03:58:48 America/Chicago] PHP Fatal error:  Uncaught Error: Call to undefined function resource_path() in /home/distance123/public_html/foodapp/config/view.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/config/view.php on line 17

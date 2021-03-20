@@ -1,0 +1,24 @@
+[18-Apr-2020 04:01:59 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/distance123/public_html/foodapp/routes/admin.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/routes/admin.php on line 9
+[18-Apr-2020 04:02:00 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Artisan' not found in /home/distance123/public_html/foodapp/routes/console.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/routes/console.php on line 16
+[18-Apr-2020 04:02:00 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Broadcast' not found in /home/distance123/public_html/foodapp/routes/channels.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/routes/channels.php on line 14
+[18-Apr-2020 04:02:02 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/distance123/public_html/foodapp/routes/shop.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/routes/shop.php on line 9
+[18-Apr-2020 04:02:05 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/distance123/public_html/foodapp/routes/user.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/routes/user.php on line 9
+[18-Apr-2020 04:02:08 America/Chicago] PHP Fatal error:  Uncaught Error: Class 'Route' not found in /home/distance123/public_html/foodapp/routes/web.php:9
+Stack trace:
+#0 {main}
+  thrown in /home/distance123/public_html/foodapp/routes/web.php on line 9
