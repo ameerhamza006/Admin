@@ -10,7 +10,7 @@ class BraintreeTokenController extends Controller
     {
         return response()->json([
             'data' => [
-                'token' => //Braintree_ClientToken::generate(),
+                'token' =>//Braintree_ClientToken::generate(),
             ]
         ]);
     }
