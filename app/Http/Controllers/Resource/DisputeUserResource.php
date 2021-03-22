@@ -9,9 +9,12 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Route;
 use Exception;
 use App\Admin;
-use Spatie\Permission\Models\Role;
+//use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Auth;
+use App\Role;
+use DB;
+
 class DisputeUserResource extends Controller
 {
     /**
@@ -21,7 +24,12 @@ class DisputeUserResource extends Controller
      */
     public function index()
     {  
-        $Users = Admin::role('Dispute Manager')->get();
+        
+        $Users = DB::table('admins')
+        ->leftjoin('roles','roles.id','=','admins.role_id')
+        ->select('roles.name as role_name','admins.*')
+        ->orderBy('admins.id','DESC')
+        ->get();
         return view(Route::currentRouteName(), compact('Users'));
     }
 
@@ -32,7 +40,8 @@ class DisputeUserResource extends Controller
      */
     public function create()
     {
-       return view(Route::currentRouteName());
+        $Roles = Role::all();
+       return view(Route::currentRouteName(),compact('Roles'));
     }
 
     /**
@@ -47,8 +56,9 @@ class DisputeUserResource extends Controller
                 'name' => 'required|max:255',
                 'email' => 'required|unique:admins|email|max:255',
                 'phone' => 'required|unique:admins|string|max:255',
-                //'avatar' => 'image',
+                'avatar' => 'image',
                 'password' => 'required|min:6|confirmed',
+                'role_id' => 'required',
             ]);
 
         try {
@@ -58,7 +68,7 @@ class DisputeUserResource extends Controller
                 $Admin['avatar'] = asset('storage/'.$request->avatar->store('admin/profile'));;
             }
             $Admin = Admin::create($Admin);
-            $Admin->assignRole('Dispute Manager');
+           // $Admin->assignRole('Dispute Manager');
             // return redirect()->route('admin.Admins.index')->with('flash_success','Admin added successfully');
             return back()->with('flash_success',trans('dispute.user.created_success'));
         } catch (Exception $e) {
@@ -96,9 +106,11 @@ class DisputeUserResource extends Controller
      */
     public function edit($id)
     {
+       
        try {
+        $Roles = Role::all();
             $User = Admin::findOrFail($id);
-            return view(Route::currentRouteName(), compact('User'));
+            return view(Route::currentRouteName(), compact('User','Roles'));
         } catch (ModelNotFoundException $e) {
             // return redirect()->route('admin.Admins.index')->with('flash_error', 'Admin not found!');
             return back()->with('flash_error', trans('form.whoops'));

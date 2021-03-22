@@ -36,6 +36,28 @@
                         </span>
                     @endif
                 </div>
+
+                <div>
+                    @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                <div class="form-group col-xs-12 mb-2">
+                <select name="role_id" class="form-control">
+                <option disabled selected>Type</option>
+                @foreach($Roles as $Role)
+                <option value="{{$Role->id}}" >{{$Role->name}}</option>
+                @endforeach
+                </select>
+                    </div>
+
+                    
+
+
+
                 <div class="form-group col-xs-12 mb-2">
                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required>
                 </div>

@@ -10,7 +10,7 @@
                     <a href="{{ route('admin.orders.index') }}?t=pending"><i class="ft-monitor"></i><span data-i18n="" class="menu-title">@lang('menu.admin.dispatcher')</span></a>
                 </li> -->
                 
-                @if(@Auth::user()->hasRole('Admin'))
+                @if(@Auth::user()->hasRole('Admin')  )
                 <!--<li class="nav-item @if(Request::segment(2)=='disputes') active  @endif  has-open">
                     <a href="#">
                         <i class="fa fa-handshake-o"></i>
@@ -41,13 +41,13 @@
                 
                 
                 
-             <!--   <li class="@if(Request::segment(2)=='dispute-user') active  @endif nav-item"><a href="#"><i class="fa fa-user-circle"></i><span data-i18n="" class="menu-title">@lang('menu.admin.dispute_manager')</span></a>
+               <li class="@if(Request::segment(2)=='dispute-user') active  @endif nav-item"><a href="#"><i class="fa fa-user-circle"></i><span data-i18n="" class="menu-title">@lang('menu.admin.dispute_manager')</span></a>
                     <ul class="menu-content">
                         <li><a href="{{ route('admin.dispute-user.index') }}" class="menu-item">@lang('menu.admin.list_dispute_manager')</a></li>
                         <li><a href="{{ route('admin.dispute-user.create') }}" class="menu-item">@lang('menu.admin.add_dispute_manager')</a></li>
                     </ul>
-                </li>
-                <li class="@if(Request::segment(2)=='cuisines') active  @endif nav-item"><a href="#"><i class="fa fa-book"></i><span data-i18n="" class="menu-title">@lang('menu.admin.cuisines')</span></a>
+                </li> 
+              <!--  <li class="@if(Request::segment(2)=='cuisines') active  @endif nav-item"><a href="#"><i class="fa fa-book"></i><span data-i18n="" class="menu-title">@lang('menu.admin.cuisines')</span></a>
                     <ul class="menu-content">
                         <li><a href="{{ route('admin.cuisines.index') }}" class="menu-item">@lang('menu.admin.list_cuisines')</a></li>
                         <li><a href="{{ route('admin.cuisines.create') }}" class="menu-item">@lang('menu.admin.add_cuisines')</a></li>
@@ -76,7 +76,17 @@
                         <li><a href="{{url('admin/send/push')}}" class="menu-item">@lang('menu.admin.custom_push')</a></li>
                     </ul>
                 </li> -->
+
+                <li class="@if(Request::segment(2)=='roles') active  @endif nav-item"><a href="#"><i class="fa fa-users"></i><span data-i18n="" class="menu-title">Roles</span></a>
+                    <ul class="menu-content">
+                        <li><a href="{{route('admin.roles.index')}}" class="menu-item">Role List</a></li>
+                        <li><a href="{{route('admin.roles.create')}}" class="menu-item">Add Role</a></li>
+                        <li><a href="{{route('admin.permissions.create')}}" class="menu-item">Role Manager</a></li>
+                    </ul>
+                </li>
                 
+
+
                 <li class="@if(Request::segment(2)=='users') active  @endif nav-item"><a href="#"><i class="fa fa-users"></i><span data-i18n="" class="menu-title">@lang('menu.admin.customer')</span></a>
                     <ul class="menu-content">
                         <li><a href="{{route('admin.users.index')}}" class="menu-item">@lang('menu.admin.list_customer')</a></li>

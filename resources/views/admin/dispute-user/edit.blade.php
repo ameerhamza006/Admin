@@ -45,6 +45,20 @@
                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" >
                 </div>
                 <div class="form-group col-xs-12 mb-2">
+                <select name="role_id" class="form-control">
+                <option disabled selected>Type</option>
+              
+               
+                @foreach($Roles as $Role)
+                @if($Role->id ==  $User->role_id)
+                <option selected value="{{$Role->id}}" >{{$Role->name}}</option>
+                @endif 
+                <option  value="{{$Role->id}}" >{{$Role->name}}</option>
+               
+                @endforeach
+                </select>
+                    </div>
+                <div class="form-group col-xs-12 mb-2">
                     <input type="file" accept="image/*" name="avatar" class="dropify form-control" id="avatar" aria-describedby="fileHelp" >
                     @if ($errors->has('avatar'))
                         <span class="help-block">

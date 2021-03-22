@@ -31,7 +31,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Contact Deatils</th>
-                                <th>Ratings</th>
+                                <th>Role</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -49,8 +49,8 @@
                                     @endif
                                     </td>
                                     <td>{{$User->phone}}</td>
-                                    <td class="star">
-                                        <input type="hidden" class="rating" readonly value="3"/>
+                                    <td >
+                                    {{$User->role_name}}
                                     </td>
                                     <td>
                                         @if(Setting::get('DEMO_MODE')==1)
