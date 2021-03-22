@@ -39,6 +39,16 @@
                 <div class="form-group col-xs-12 mb-2">
                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password" required>
                 </div>
+
+                <div class="form-group col-xs-12 mb-2">
+                <select class="form-control" name="type">
+                <option >User Type</option>
+                <option value="admin">Admin</option>
+                <option value="subadmin">Sub Admin</option>
+                <option value="custumer">Customer</option>
+               
+                </select>
+                    </div>
                 <div class="form-group col-xs-12 mb-2">
                     <input type="file" accept="image/*" name="avatar" class="dropify form-control" id="avatar" aria-describedby="fileHelp"  required >
                     @if ($errors->has('avatar'))
