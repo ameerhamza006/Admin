@@ -12,6 +12,7 @@ Route::get('{id}/profile', 'Resource\DisputeUserResource@edit')->name('dispute-u
 Route::resource('users', 'Resource\UserResource');
 Route::resource('roles', 'Resource\RoleControler');
 Route::resource('permissions', 'Resource\PermissionsController');
+
 Route::resource('transporters', 'Resource\TransporterResource');
 Route::resource('dispute-user', 'Resource\DisputeUserResource');
 Route::resource('categories', 'Resource\CategoryResource');

@@ -24,75 +24,164 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block card-dashboard table-responsive">
-                    <table class="table table-striped table-bordered file-export">
+                <form method="POST" action="{{ route('admin.permissions.store') }}">
+                {{ csrf_field() }}
+                <div class="col-lg-3 mb-2">
+                <select class="form-control dynamic" id="role" name="role">
+                <option disabled selected>Select Role</option>
+                @foreach($Roles as $Role)
+                <option value="{{$Role->id}}">{{$Role->name}}</option>
+                @endforeach
+                </select>
+                </div>
+                
+                    <table class="table table-striped table-bordered ">
                         <thead>
                         
-                        <tr>
-                        <th>Role</th>
-
-                        @foreach($Roles as $Role)
-                        
-                        <th class="text-center">{{$Role->name}}</th>
-                        @endforeach
-                           </tr> 
+                       
                             <tr>
-                            
+                            <th>Roles</th>
+                            <th>Dashboard</th>
+                            <th>Restaurant</th>
+                            <th>Delivery </th>
+                            <th>Dispute</th>
+                            <th>Restaurant Banner</th>
+                            <th>Role</th>
+                            <th>User</th>
+                            <th>Settings</th>
                             </tr>
-                           
+                            
+                         
                          
                         </thead>
                         
-                        <tbody>
-                        <tr><th>Restaurant</th>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        </tr>
-                        <tr>
-                        <th>Delivery</th>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        </tr>
-                        <tr>
-                        <th>Dispute</th>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        </tr>
-                        <tr>
-                        <th>Role</th>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                            </tr>
-                        <tr>
-                        <th>User</th>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        </tr>
-                        <tr>
-                        <th>Settings</th>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        <td> <input type="checkbox" class="form-control"> </td>
-                        </tr>
+                        <tbody class="dynamic" id="location">
+                     
+                        @foreach($Roles as $Role)
+                        <tr align="center">
+                        <td class="text-center">{{$Role->name}}</td>
                         
-                           <tr></tr>
-                           <tr><td><button type="submit" class="btn btn-success">Save</button></td></tr>
-                               
-                                
-                         
+                        <td> <input type="checkbox" name="dashboard" class="form-control"> </td>
+                        <td> <input type="checkbox" name="restaurant" class="form-control"> </td>
+                        <td> <input type="checkbox" name="delivery_poeple" class="form-control"> </td>
+                        <td> <input type="checkbox" name="add_admins" class="form-control"> </td>
+                        <td> <input type="checkbox" name="restaurant_banner" class="form-control"> </td>
+                        <td> <input type="checkbox" name="roles" class="form-control"> </td>
+                        <td> <input type="checkbox" name="user" class="form-control"> </td>
+                        <td> <input type="checkbox" name="setting" class="form-control"> </td>
+                        
+                        </tr> 
+
+                        @endforeach
+                           
+                       
                         </tbody>
                         
                   
                         
                         
                     </table>
+                    <button type="submit" class="btn btn-success">Save</button>  
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script>
+$(document).ready(function(){
+ $('.dynamic').change(function(){
+    
+  if($(this).val() != '')
+  {
+   var select = $(this).val();
+   
+   var _token = $('input[name="_token"]').val();
+   $.ajax({
+    url:"{{ route('permissions.fetch') }}",
+    method:"POST",
+    data:{select:select, _token:"{{csrf_token()}}"},
+    success:function(result)
+    {
+        
+      var location = '';
+        $('#location').empty()
+    
+                 
+    $.each(result,function(i,result){
+        
+        location += '<tr>'+
+                   
+                    '<td>'+result.name+'</td>' +
+                    '<td>' + 
+                    '<input type="checkbox" name="dashboard" class="form-control">' + 
+                    '</td>' +
+                    '<td>' + 
+                    '<input type="checkbox" name="restaurant" class="form-control">' +
+                     '</td>' +
+                    '<td>' +
+                    '<input type="checkbox" name="delivery_poeple" class="form-control">' + 
+                    '</td>' +
+                    '<td>' +
+                    '<input type="checkbox" name="add_admins" class="form-control">' +
+                    '</td>' +
+                    '<td>' +
+                    '<input type="checkbox" name="restaurant_banner" class="form-control">' +
+                    '</td>' +
+                    '<td>' +
+                    '<input type="checkbox" name="roles" class="form-control">' +
+                    '</td>' +
+                    '<td>' +
+                    '<input type="checkbox" name="user" class="form-control">' +
+                    '</td>' +
+                    '<td>' +
+                    '<input type="checkbox" name="setting" class="form-control">' + 
+                    '</td>' +
+                   
+                  '</tr>' 
+        
+        
+        
+        
+       // remark += '<option value="'+result.id+'">"'+result.name+'"</option>'
+        $('#location').html(location)
+        $('#available').html(available)
+        
+    })
+    }
+   })
+  }
+ });
+ $('#user').change(function(){
+  $('#location').val('');
+  $('#remark').val('');
+ });
+ $('#location').change(function(){
+  $('#remark').val('');
+ });
+ 
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endsection

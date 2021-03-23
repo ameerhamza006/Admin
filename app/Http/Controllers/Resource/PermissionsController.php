@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Route;
 use App\Role;
+use DB;
+use Exception;
+use App\RolePermission;
 
 class PermissionsController extends Controller
 {
@@ -16,7 +19,13 @@ class PermissionsController extends Controller
      */
     public function index()
     {
-        //
+        $permission = DB::table('role_permissions')
+        ->join('roles','roles.id','=','role_permissions.role_id')
+        ->select('roles.name','role_permissions.*')
+        ->get();
+
+        //dd($permission);
+        return view(Route::currentRouteName(), compact('permission'));
     }
 
     /**
@@ -30,6 +39,21 @@ class PermissionsController extends Controller
         return view(Route::currentRouteName(),compact('Roles'));
     }
 
+    
+    public function fetch(Request $request)
+    {
+        $select = $request->get('select');
+
+        $data = DB::table('roles')
+        ->where('id',$select)
+        ->get();
+
+
+        return response()->json($data);
+    }
+
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -38,7 +62,41 @@ class PermissionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+
+        $this->validate($request, [
+            'role' => 'required',
+            
+           
+        ]);
+ 
+        
+            //$permission = $request->all();
+
+            $model = new RolePermission();
+            $model->role_id = $request->role;
+            $model->dashboard = $request->dashboard;
+            $model->restaurant = $request->restaurant;
+            $model->delivery_poeple = $request->delivery_poeple;
+            $model->add_admins = $request->add_admins;
+            $model->restaurant_banner = $request->restaurant_banner;
+            $model->roles = $request->roles;
+            $model->user = $request->user;
+            $model->setting = $request->setting;
+           // dd($model);
+           $model->save();
+
+            //$permission = RolePermission::create($permission);
+    
+            // return redirect()->route('admin.users.index')->with('flash_success','User added successfully');
+            return back()->with('flash_success',trans('user.created_success',['name'=>'Permissions']));
+            // return redirect()->route('admin.users.index')->with('flash_error', 'Whoops! something went wrong.');
+            return back()->with('flash_error', 'Whoops! something went wrong.');
+        
+        
+
+
+
     }
 
     /**

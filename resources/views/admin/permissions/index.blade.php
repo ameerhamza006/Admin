@@ -25,37 +25,87 @@
             <div class="card-body collapse in">
                 <div class="card-block card-dashboard table-responsive">
                     <table class="table table-striped table-bordered file-export">
-                        <thead>
-                            <tr>
-                                <th>@lang('user.index.sl_no')</th>
-                                <th>Name</th>
-                                <th>Guard Name</th>
-                                
-                                <th>@lang('user.index.action')</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse($roles as $key=>$Role)
-                                <tr>
-                                    <td>{{$key+1}}</td>
-                                    <td>{{$Role->name}}</td>
-                                    <td>{{$Role->guard_name}}</td>
-                                    
-                                    <td>
-                                        @if(Setting::get('DEMO_MODE')==1)
-                                        <a href="{{ route('admin.roles.edit', $Role->id) }}" class="table-btn btn btn-icon btn-success"><i class="fa fa-pencil-square-o"></i></a>
-                                        <button   class="table-btn btn btn-icon btn-danger" form="resource-delete-{{ $Role->id }}" ><i class="fa fa-trash-o"></i></button>
-                                        @endif
-                                        <form id="resource-delete-{{ $Role->id }}" action="{{ route('admin.roles.destroy', $Role->id)}}" method="POST">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                        </form>
-                                    </td>
-                                </tr>
-                            @empty
-                                <tr><td colspan="50">@lang('user.index.no_record_found')</td></tr>
-                            @endforelse
-                        </tbody>
+                     
+                    <thead>
+                        
+                       
+                        <tr>
+                        <th>Roles</th>
+                        <th>Dashboard</th>
+                        <th>Restaurant</th>
+                        <th>Delivery </th>
+                        <th>Dispute</th>
+                        <th>Restaurant Banner</th>
+                        <th>Role</th>
+                        <th>User</th>
+                        <th>Settings</th>
+                        </tr>
+                        
+                     
+                     
+                    </thead>
+                    
+                    <tbody class="dynamic" id="location">
+                 
+                    @foreach($permission as $per)
+                    <tr align="center">
+                    <td class="text-center">{{$per->name}}</td>
+                    @if($per->dashboard == 'on')
+                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    @else
+                    <td> <input type="checkbox"  class="form-control"> </td>
+                    @endif
+                    @if($per->restaurant == 'on')
+                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    @else
+                    <td> <input type="checkbox"  class="form-control"> </td>
+                    @endif
+                    @if($per->delivery_poeple == 'on')
+                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    @else
+                    <td> <input type="checkbox"  class="form-control"> </td>
+                    @endif
+                    
+                    @if($per->add_admins == 'on')
+                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    @else
+                    <td> <input type="checkbox"  class="form-control"> </td>
+                    @endif
+
+                    @if($per->restaurant_banner == 'on')
+                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    @else
+                    <td> <input type="checkbox"  class="form-control"> </td>
+                    @endif
+
+                    @if($per->roles == 'on')
+                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    @else
+                    <td> <input type="checkbox"  class="form-control"> </td>
+                    @endif
+
+                    @if($per->user == 'on')
+                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    @else
+                    <td> <input type="checkbox"  class="form-control"> </td>
+                    @endif
+
+                    @if($per->setting == 'on')
+                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    @else
+                    <td> <input type="checkbox"  class="form-control"> </td>
+                    @endif
+
+
+                    
+                    </tr> 
+
+                    @endforeach
+                       
+                   
+                    </tbody>
+    
+
                     </table>
                 </div>
             </div>

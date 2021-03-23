@@ -8,7 +8,7 @@
 //abort(404, 'The resource you are looking for could not be found');
 Route::get('/', 'WelcomeController@home');
 
-
+Route::post('permissions', 'Resource\PermissionsController@fetch')->name('permissions.fetch');
 Route::get('privacy', function () {
     $page = 'privacy';
     $title = 'Privacy Policy';
