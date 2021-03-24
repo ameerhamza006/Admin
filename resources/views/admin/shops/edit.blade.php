@@ -257,8 +257,13 @@
 
                             <div class="col-sm-12">
                                 <div class="form-group{{ $errors->has('maps_address') ? ' has-error' : '' }}">
-                                    <label for="maps_address">@lang('shop.create.location')</label>
-                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Shop Location" name="maps_address" value="{{ old('maps_address', $Shop->maps_address) }}">
+                                <label for="maps_address">@lang('shop.create.location')</label>
+                                <select class="form-control controls" name="maps_address">
+                                <option selected >{{ old('description',$Shop->maps_address) }}</option>
+                                <option value="Pakistan">Pakistan</option>
+                                <option value="Turky">Turky</option>
+                                </select>
+                                    
                                 </div>
                             </div>
                             <div class="col-xs-12">

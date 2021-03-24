@@ -33,12 +33,15 @@
                                                 <th>@lang('shop.index.image')</th>
                                                 <th>@lang('shop.index.address')</th>
                                                 <th>@lang('shop.index.contact_details')</th>
+                                                <th>Country</th>
                                                 <th>@lang('shop.index.rating')</th>
                                                 <th>@lang('shop.index.action')</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @forelse($Shops as $key=>$User)
+                                            
+
                                                 <tr>
                                                     <td>{{ $key+1 }}</td>
                                                     <td>{{ $User->name }}</td>
@@ -59,6 +62,7 @@
                                                     </td>
                                                     <td>{{ $User->address }}</td>
                                                     <td>{{ $User->phone }}</td>
+                                                    <td>{{ $User->maps_address }}</td>
                                                     
                                                     <td class="star">
                                                         <?php for($i=1;$i<=$User->rating;$i++){

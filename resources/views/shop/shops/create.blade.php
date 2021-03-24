@@ -1,6 +1,7 @@
 @extends('shop.layouts.app')
 
 @section('content')
+
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box table-responsive">
@@ -104,7 +105,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group{{ $errors->has('maps_address') ? ' has-error' : '' }}">
-                                    <label for="maps_address">@lang('admin.shops.create.location')</label>
+                                    <label for="maps_address">@lang('admin.shops.create.location') </label>
                                     <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Shop Location" name="maps_address" value="{{ old('maps_address') }}">
                                 </div>
                             </div>
@@ -117,6 +118,7 @@
                             <div class="col-xs-12">
                                 <div id="map"></div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

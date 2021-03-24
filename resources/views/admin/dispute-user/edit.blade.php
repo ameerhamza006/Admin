@@ -58,6 +58,14 @@
                 @endforeach
                 </select>
                     </div>
+                    <div class="form-group col-xs-12 mb-2">
+                <select name="country" class="form-control">
+                
+                <option selected value="{{$User->country}}">{{$User->country}}</option>
+                <option value="Pakistan">Pakistan</option>
+                <option value="Turky">Turky</option>
+                </select>
+                    </div>
                 <div class="form-group col-xs-12 mb-2">
                     <input type="file" accept="image/*" name="avatar" class="dropify form-control" id="avatar" aria-describedby="fileHelp" >
                     @if ($errors->has('avatar'))

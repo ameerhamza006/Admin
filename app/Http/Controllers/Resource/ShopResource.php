@@ -17,7 +17,8 @@ use App\Product;
 use App\Category;
 use App\Addon;
 use App\AddonProduct;
-use Auth;
+//use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class ShopResource extends Controller
 {   
@@ -30,11 +31,12 @@ class ShopResource extends Controller
     {   
         try{
             $Shops = $this->filter($request);
+            
            
-            //dd($Shops);
             $Shops->map(function ($Shop) {
                 $Shop['shopstatus'] = $this->shoptime($Shop);
                 $Shop['shopopenstatus'] = $this->shoptiming($Shop);
+                //dd($Shop);
                 return $Shop;
             });
             
@@ -456,6 +458,8 @@ class ShopResource extends Controller
             $longitude = $request->longitude;
             $latitude = $request->latitude;
             if(Setting::get('search_distance')>0){
+              
+           // dd($country);
                 $Shops->select('shops.*')
                     ->selectRaw("(6371 * acos( cos( radians('$latitude') ) * cos( radians(latitude) ) * cos( radians(longitude) - radians('$longitude') ) + sin( radians('$latitude') ) * sin( radians(latitude) ) ) ) AS distance")
 

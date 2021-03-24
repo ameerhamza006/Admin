@@ -59,6 +59,7 @@ class DisputeUserResource extends Controller
                 'avatar' => 'image',
                 'password' => 'required|min:6|confirmed',
                 'role_id' => 'required',
+                'country' => 'required',
             ]);
 
         try {
@@ -134,6 +135,8 @@ class DisputeUserResource extends Controller
             $Update['name'] = $request->name;
             $Update['email'] = $request->email;
             $Update['phone'] = $request->phone;
+            $Update['role_id'] = $request->role_id;
+            $Update['country'] = $request->country;
 
             if($request->has('password')) {
                 $Update['password'] = bcrypt($request->password);

@@ -119,6 +119,7 @@ class ProfileController extends Controller
         try {
             $Shop = Shop::with('cuisines','timings')->findOrFail($id);
             $Update = $request->all();
+            
             if($request->hasFile('avatar')) {
                 $Update['avatar'] = asset('storage/'.$request->avatar->store('shops'));
             } else {
@@ -136,11 +137,58 @@ class ProfileController extends Controller
             }
             if($request->has('pure_veg')) {
                 $Update['pure_veg'] = $request->pure_veg == 'no'?0:1;
+            }else {
+                unset($Update['pure_veg']);
             }
             if($request->has('popular')) {
                 $Update['popular'] = $request->popular == 'no'?0:1;
+            }else {
+                unset($Update['popular']);
+            }
+            if($request->has('whatsapp')) {
+                $Update['whatsapp'] = $request->whatsapp;
+            }else {
+                unset($Update['whatsapp']);
+            }
+            if($request->has('system')) {
+                $Update['system'] = $request->system;
+            }else {
+                unset($Update['system']);
+            }
+            if($request->has('credit')) {
+                $Update['credit'] = $request->credit;
+            }else {
+                unset($Update['credit']);
+            }
+            if($request->has('pin')) {
+                $Update['pin'] = $request->pin;
+            }else {
+                unset($Update['pin']);
+            }
+            if($request->has('home_url')) {
+                $Update['home_url'] = $request->home_url;
+            }else {
+                unset($Update['home_url']);
+            }
+
+            if($request->has('facebook_url')) {
+                $Update['facebook_url'] = $request->facebook_url;
+            }else {
+                unset($Update['facebook_url']);
+            }
+            if($request->has('instagram_url')) {
+                $Update['instagram_url'] = $request->instagram_url;
+            }
+            else {
+                unset($Update['instagram_url']);
+            }
+            if($request->has('twitter_url')) {
+                $Update['twitter_url'] = $request->twitter_url;
+            }else {
+                unset($Update['twitter_url']);
             }
             
+            //dd($Update);
             $Shop->update($Update);
 
             if($request->has('cuisine_id')) {

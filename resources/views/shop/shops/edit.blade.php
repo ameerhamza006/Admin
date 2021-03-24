@@ -1,5 +1,55 @@
 @extends('shop.layouts.app')
 @section('content')
+<style>
+
+.material-switch > input[type="checkbox"] {
+    display: none;   
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative; 
+    width: 40px;  
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}
+
+
+</style>
+
 <div class="row">
     <div class="col-sm-12">
         <div class="card-box table-responsive">
@@ -189,7 +239,73 @@
                                 </span>
                             @endif
                         </div>
+                        <div class="col-xs-12 list-group-item mt-2">
+                            <label>Home Url</label>
+                            <div style="width: 40px; ">
+                            <input   name="hl"   type="checkbox" onclick="documentFilter(this, '#hideablehome')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideablehome"  class="hiddenByDefault">
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Home Url" name="home_url" >
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-12 list-group-item mt-2">
+                            <label>Facebook </label>
+                            <div style="width: 40px; ">
+                            <input   name="fb"   type="checkbox" onclick="documentFilter(this, '#hideablefb')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideablefb"  class="hiddenByDefault">
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Home Url" name="facebook_url" >
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-12 list-group-item mt-2">
+                            <label>Instagram </label>
+                            <div style="width: 40px; ">
+                            <input   name="insta"   type="checkbox" onclick="documentFilter(this, '#hideableinsta')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideableinsta"  class="hiddenByDefault">
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Instagram Url" name="instagram_url" >
+                                </div>
+                            </div>
+
+
+                            <div class="col-xs-12 list-group-item mt-2">
+                            <label>Twitter </label>
+                            <div style="width: 40px; ">
+                            <input   name="tw"   type="checkbox" onclick="documentFilter(this, '#hideabletw')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideabletw"  class="hiddenByDefault mb-4" >
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Twitter Url" name="twitter_url" >
+                                </div>
+                            </div>
+
+
+
                     </div>
+                    <!--ameer-->
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-sm-12">
@@ -250,6 +366,65 @@
                             <div class="col-xs-12">
                                 <div id="map" style="height:400px;"></div>
                             </div>
+<style>
+
+.hiddenByDefault { display: none; }
+
+</style>
+
+                            <div class="col-xs-12 list-group-item mt-2">
+                            <label>Use WhatsApp Order</label>
+                            <div style="width: 40px; ">
+                            <input   name="wp"   type="checkbox" onclick="documentFilter(this, '#hideablewp')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideablewp"  class="hiddenByDefault">
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter WhatsApp Number" name="whatsapp" >
+                                </div>
+                            </div>
+                        
+
+                        <!---->
+                        <div class="col-xs-12 list-group-item mt-2">
+                            <label>Use System Order</label>
+                            <div style="width: 40px; ">
+                            <input   name="sys"   type="checkbox" onclick="documentFilter(this, '#hideablesys')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideablesys"  class="hiddenByDefault">
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter System Number" name="system" >
+                                </div>
+                            </div>
+
+                            <!---->
+                        <div class="col-xs-12 list-group-item mt-2">
+                            <label>Use Credit Card Order</label>
+                            <div style="width: 40px; ">
+                            <input   name="card"   type="checkbox" onclick="documentFilter(this, '#hideablecard')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideablecard"  class="hiddenByDefault">
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Card Number" name="credit" >
+                                </div>
+                            </div>
+
+
+
+
+                        
+
                         </div>
                     </div>
                 </div>
@@ -276,7 +451,72 @@
 @section('scripts')
 <script type="text/javascript" src="{{ asset('assets/admin/plugins/clockpicker/dist/bootstrap-clockpicker.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/admin/plugins/dropify/dist/js/dropify.min.js') }}"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/js/bootstrap-switch.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap-theme.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap2/bootstrap-switch.min.css" />
+
 <script type="text/javascript">
+$('#hideablewp').hide();
+$("[name='wp']").bootstrapSwitch({
+  onSwitchChange: function(e, state) {
+    $('#hideablewp').toggle(state);
+  }
+});
+
+$('#hideablesys').hide();
+$("[name='sys']").bootstrapSwitch({
+  onSwitchChange: function(e, state) {
+    $('#hideablesys').toggle(state);
+  }
+});
+
+
+$('#hideablecard').hide();
+$("[name='card']").bootstrapSwitch({
+  onSwitchChange: function(e, state) {
+    $('#hideablecard').toggle(state);
+  }
+});
+
+
+$('#hideablehome').hide();
+$("[name='hl']").bootstrapSwitch({
+  onSwitchChange: function(e, state) {
+    $('#hideablehome').toggle(state);
+  }
+});
+
+
+$('#hideablefb').hide();
+$("[name='fb']").bootstrapSwitch({
+  onSwitchChange: function(e, state) {
+    $('#hideablefb').toggle(state);
+  }
+});
+
+$('#hideableinsta').hide();
+$("[name='insta']").bootstrapSwitch({
+  onSwitchChange: function(e, state) {
+    $('#hideableinsta').toggle(state);
+  }
+});
+
+
+$('#hideabletw').hide();
+$("[name='tw']").bootstrapSwitch({
+  onSwitchChange: function(e, state) {
+    $('#hideabletw').toggle(state);
+  }
+});
+
+
+
+
+
     function disableEnterKey(e)
     {
         var key;

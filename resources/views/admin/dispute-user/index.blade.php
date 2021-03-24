@@ -31,6 +31,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Contact Deatils</th>
+                                <th> Country </th>
                                 <th>Role</th>
                                 <th>Actions</th>
                             </tr>
@@ -49,6 +50,7 @@
                                     @endif
                                     </td>
                                     <td>{{$User->phone}}</td>
+                                    <td>{{$User->country}}</td>
                                     <td >
                                     {{$User->role_name}}
                                     </td>

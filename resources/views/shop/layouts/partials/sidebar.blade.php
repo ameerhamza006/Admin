@@ -1,7 +1,7 @@
 <div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
         <div class="main-menu-content">
             <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
-                <li class=" navigation-header"><span>General</span><i data-toggle="tooltip" data-placement="right" data-original-title="General" class=" ft-minus"></i>
+                <li class=" navigation-header"><span>General </span><i data-toggle="tooltip" data-placement="right" data-original-title="General" class=" ft-minus"></i>
                 </li>
                 <li class="@if(Request::segment(2)=='home') active  @endif nav-item">
                     <a href="{{ route('shop.home') }}"><i class="ft-home"></i><span data-i18n="" class="menu-title">@lang('menu.shop.dashboard')</a>
@@ -9,6 +9,10 @@
                 <li class="@if(Request::segment(2)=='orders') active  @endif nav-item">
                     <a href="{{ url('shop/orders') }}?t=pending"><i class="ft-monitor"></i><span data-i18n="" class="menu-title">@lang('menu.shop.dispatcher')</span></a>
                 </li>
+
+               
+
+
                 <li class=" nav-item"><a href="{{route('shop.profile.index')}}"><i class="fa fa-cutlery"></i><span data-i18n="" class="menu-title">@lang('menu.shop.restaurant')</span></a>
                     
                 </li>

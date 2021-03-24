@@ -31,13 +31,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $role_id = Auth::user()->role_id;
-        //dd($role_id);
-        $permission = DB::table('role_permissions')
-        ->where('role_id',$role_id)
-        //->select('dashboard')
-        ->first();
-       //  dd($permission);
+        
         $Order = new Order;
         $RecentOrders = $Order->where('status','RECEIVED')->orderBy('id','Desc')->take(5)->get();
         $DeliveryOrders = $Order->where('status','COMPLETED')->orderBy('id','Desc')->take(4)->get();
@@ -66,7 +60,7 @@ class AdminController extends Controller
         
         $Order=[];
         //return $complete_cancel;
-        return view('admin.home',compact('RecentOrders','DeliveryOrders','OrderReceivedToday','OrderDeliveredToday','OrderIncomeMonthly','OrderIncomeToday','Order','complete_cancel','permission'));
+        return view('admin.home',compact('RecentOrders','DeliveryOrders','OrderReceivedToday','OrderDeliveredToday','OrderIncomeMonthly','OrderIncomeToday','Order','complete_cancel'));
     }
 
     /**
