@@ -1,6 +1,16 @@
 @extends('admin.layouts.app')
 
 @section('content')
+
+@php
+            $user_country =  @Auth::user()->country;
+    $cd = App\Shop::where('maps_address',$user_country)
+           ->get();
+    
+    
+    
+    @endphp
+
  <!-- File export table -->
                 <div class="row file">
                     <div class="col-xs-12">
@@ -39,7 +49,8 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @forelse($Shops as $key=>$User)
+                                        @if(@Auth::user()->role_id != 1)
+                                            @forelse($cd as $key=>$User)
                                             
 
                                                 <tr>
@@ -93,6 +104,62 @@
                                             @empty
                                             <tr><td colspan="50">@lang('shop.index.no_record_found')</td></tr>
                                             @endforelse
+                                            @else
+                                            @forelse($Shops as $key=>$User)
+                                            
+
+                                            <tr>
+                                                <td>{{ $key+1 }}</td>
+                                                <td>{{ $User->name }}</td>
+                                                <td>
+                                                @if(Setting::get('DEMO_MODE')==1)
+                                                {{$User->email}}
+                                                @else
+                                                {{substr($User->email, 0, 1).'****'.substr($User->email, strpos($User->email, "@"))}}
+                                                @endif
+                                                </td>
+                                                <td>
+                                                @if($User->avatar) 
+                                                 <div class="bg-img com-img" style="background-image: url({{ asset($User->avatar) }});"></div>
+                                                @else
+                                                No Image
+                                                @endif
+                                                   
+                                                </td>
+                                                <td>{{ $User->address }}</td>
+                                                <td>{{ $User->phone }}</td>
+                                                <td>{{ $User->maps_address }}</td>
+                                                
+                                                <td class="star">
+                                                    <?php for($i=1;$i<=$User->rating;$i++){
+                                                            echo '<i class="fa fa-star" aria-hidden="true"></i>';
+                                                            }
+                                                        for($i=1;$i<=(5-$User->rating);$i++){
+                                                            echo '<i class="fa fa-star-o" aria-hidden="true"></i>';
+                                                            }
+                                                    ?>
+                                                <td>
+                                                    @if(Setting::get('PRODUCT_ADDONS')==1)
+                                                        <a href="{{ route('admin.addons.index') }}?shop={{$User->id}}" class="btn btn-primary btn-darken-3 tab-order" > Addons List</a>
+                                                    @endif
+                                                    <a href="{{ route('admin.categories.index') }}?shop={{$User->id}}" class="btn btn-primary btn-darken-3 tab-order" > Category List</a>
+
+                                                    <a href="{{ route('admin.products.index') }}?shop={{$User->id}}" class="btn btn-primary btn-darken-3 tab-order" > Menu List</a>
+
+                                                    @if(Setting::get('DEMO_MODE')==1)
+                                                    <a  class="table-btn btn btn-icon btn-success" href="{{ route('admin.shops.edit', $User->id) }}"><i class="fa fa-pencil-square-o"></i></a>
+                                                    <button  class="table-btn btn btn-icon btn-danger" form="resource-delete-{{ $User->id }}" ><i class="fa fa-trash-o"></i></button>
+                                                    @endif
+                                                    <form id="resource-delete-{{ $User->id }}" action="{{ route('admin.shops.destroy', $User->id)}}" method="POST">
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                        <tr><td colspan="50">@lang('shop.index.no_record_found')</td></tr>
+                                        @endforelse
+                                        @endif
                                         </tbody>
                                     </table>
                                 </div>

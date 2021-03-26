@@ -9,6 +9,8 @@ use App\Role;
 use DB;
 use Exception;
 use App\RolePermission;
+use Spatie\Permission\Contracts\Permission;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PermissionsController extends Controller
 {
@@ -70,8 +72,15 @@ class PermissionsController extends Controller
            
         ]);
  
-        
-            //$permission = $request->all();
+       // dd($request->role);
+        //$fetch = RolePermission::all();
+
+        $fetch = RolePermission::all()
+        ->where('role_id',$request->role);
+//dd($fetch);
+        if($fetch){
+            return back()->with('flash_error', 'This Role is Already Added.');
+        }
 
             $model = new RolePermission();
             $model->role_id = $request->role;
@@ -141,6 +150,19 @@ class PermissionsController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        try {
+            $Role = RolePermission::findOrFail($id);
+           // $Role->name = $Role->name.'-'.uniqid();
+            //$Role->guard_name = $Role->guard_name.'-'.uniqid();
+           // $User->social_unique_id = $User->social_unique_id.'-'.uniqid();
+            $Role->save();
+            $Role->delete();
+
+            return back()->with('flash_success','Role Permission has been deleted!');
+        } catch (ModelNotFoundException $e) {
+            return back()->with('flash_error', 'Whoops! something went wrong.');
+        }
+    
+}
+    
 }

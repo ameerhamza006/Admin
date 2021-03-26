@@ -39,6 +39,7 @@
                         <th>Role</th>
                         <th>User</th>
                         <th>Settings</th>
+                        <th>Action</th>
                         </tr>
                         
                      
@@ -51,50 +52,57 @@
                     <tr align="center">
                     <td class="text-center">{{$per->name}}</td>
                     @if($per->dashboard == 'on')
-                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    <td> <input type="checkbox" disabled checked class="form-control"> </td>
                     @else
-                    <td> <input type="checkbox"  class="form-control"> </td>
+                    <td> <input type="checkbox" disabled class="form-control"> </td>
                     @endif
                     @if($per->restaurant == 'on')
-                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    <td> <input type="checkbox" disabled checked class="form-control"> </td>
                     @else
-                    <td> <input type="checkbox"  class="form-control"> </td>
+                    <td> <input type="checkbox" disabled class="form-control"> </td>
                     @endif
                     @if($per->delivery_poeple == 'on')
-                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    <td> <input type="checkbox" disabled checked class="form-control"> </td>
                     @else
-                    <td> <input type="checkbox"  class="form-control"> </td>
+                    <td> <input type="checkbox" disabled class="form-control"> </td>
                     @endif
                     
                     @if($per->add_admins == 'on')
-                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    <td> <input type="checkbox" disabled checked class="form-control"> </td>
                     @else
-                    <td> <input type="checkbox"  class="form-control"> </td>
+                    <td> <input type="checkbox"  disabled class="form-control"> </td>
                     @endif
 
                     @if($per->restaurant_banner == 'on')
-                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    <td> <input type="checkbox" disabled checked class="form-control"> </td>
                     @else
-                    <td> <input type="checkbox"  class="form-control"> </td>
+                    <td> <input type="checkbox" disabled  class="form-control"> </td>
                     @endif
 
                     @if($per->roles == 'on')
-                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    <td> <input type="checkbox" checked disabled class="form-control"> </td>
                     @else
-                    <td> <input type="checkbox"  class="form-control"> </td>
+                    <td> <input type="checkbox" disabled class="form-control"> </td>
                     @endif
 
                     @if($per->user == 'on')
-                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    <td> <input type="checkbox" disabled checked class="form-control"> </td>
                     @else
-                    <td> <input type="checkbox"  class="form-control"> </td>
+                    <td> <input type="checkbox" disabled  class="form-control"> </td>
                     @endif
 
                     @if($per->setting == 'on')
-                    <td> <input type="checkbox" checked class="form-control"> </td>
+                    <td> <input type="checkbox" disabled checked class="form-control"> </td>
                     @else
-                    <td> <input type="checkbox"  class="form-control"> </td>
+                    <td> <input type="checkbox"  disabled class="form-control"> </td>
                     @endif
+                    <td>
+                    <button   class="table-btn btn btn-icon btn-danger" form="resource-delete-{{ $per->id }}" ><i class="fa fa-trash-o"></i></button>
+                    <form id="resource-delete-{{ $per->id }}" action="{{ route('admin.permissions.destroy', $per->id)}}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                        </form>
+                    </td>
 
 
                     

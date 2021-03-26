@@ -44,10 +44,10 @@
                 
                 
                 @if(@Auth::user()->role_id == $per and $permission->add_admins == 'on')
-               <li class="@if(Request::segment(2)=='dispute-user') active  @endif nav-item"><a href="#"><i class="fa fa-user-circle"></i><span data-i18n="" class="menu-title">@lang('menu.admin.dispute_manager')</span></a>
+               <li class="@if(Request::segment(2)=='dispute-user') active  @endif nav-item"><a href="#"><i class="fa fa-user-circle"></i><span data-i18n="" class="menu-title">Role Management</span></a>
                     <ul class="menu-content">
-                        <li><a href="{{ route('admin.dispute-user.index') }}" class="menu-item">@lang('menu.admin.list_dispute_manager')</a></li>
-                        <li><a href="{{ route('admin.dispute-user.create') }}" class="menu-item">@lang('menu.admin.add_dispute_manager')</a></li>
+                        <li><a href="{{ route('admin.dispute-user.index') }}" class="menu-item">List Role Management</a></li>
+                        <li><a href="{{ route('admin.dispute-user.create') }}" class="menu-item">Add Role Management</a></li>
                     </ul>
                 </li> 
                 @endif
@@ -66,8 +66,8 @@
                     <ul class="menu-content">
                         <li><a href="{{route('admin.roles.index')}}" class="menu-item">Role List</a></li>
                         <li><a href="{{route('admin.roles.create')}}" class="menu-item">Add Role</a></li>
-                        <li><a href="{{route('admin.permissions.create')}}" class="menu-item">Role Manager</a></li>
-                        <li><a href="{{route('admin.permissions.index')}}" class="menu-item">List Role Manager</a></li>
+                        <li><a href="{{route('admin.permissions.create')}}" class="menu-item">Add Role Permissions</a></li>
+                        <li><a href="{{route('admin.permissions.index')}}" class="menu-item">List Role Permissions</a></li>
                     </ul>
                 </li>
                 @endif

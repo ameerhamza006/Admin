@@ -32,7 +32,7 @@ class ShopResource extends Controller
         try{
             $Shops = $this->filter($request);
             
-           
+          // dd($Shops);
             $Shops->map(function ($Shop) {
                 $Shop['shopstatus'] = $this->shoptime($Shop);
                 $Shop['shopopenstatus'] = $this->shoptiming($Shop);
@@ -155,8 +155,8 @@ class ShopResource extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:shops',
             'phone' => 'required|string|max:255',
-            'latitude' => 'required|string|max:255',
-            'longitude' => 'required|string|max:255',
+            //'latitude' => 'required|string|max:255',
+            //'longitude' => 'required|string|max:255',
             'cuisine_id' => 'required|array',
             'day' => 'required|array',
             'phone' => 'required|numeric',

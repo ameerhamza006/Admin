@@ -3,12 +3,13 @@
 @section('content')
 <div class="row">
     <div class="col-sm-12">
+    
         <div class="card-box table-responsive">
 
             <form role="form" method="POST" action="{{ route('admin.shops.store') }}" enctype="multipart/form-data" onkeypress="return disableEnterKey(event);">
                 {{ csrf_field() }}
-                <input type="hidden" id="latitude" name="latitude" value="{{ old('latitude') }}" readonly required>
-                <input type="hidden" id="longitude" name="longitude" value="{{ old('longitude') }}" readonly required>
+                <input type="hidden" id="latitude" name="latitude" value="{{ old('latitude') }}" readonly >
+                <input type="hidden" id="longitude" name="longitude" value="{{ old('longitude') }}" readonly >
 
                 <h4 class="m-t-0 header-title">
                     <b>@lang('shop.create.title')</b>
@@ -154,6 +155,19 @@
                                 </span>
                             @endif
                     </div>
+                    <hr>
+                    <br> <br>  <br> <br> <br>
+                    
+
+                    <div class="col-xs-12  mt-2">
+                            <h4><b>Social Links</b></h4>
+                            <div style="width: 40px; ">
+                           
+                           
+                        </div>
+                        </div>
+                        
+                    
 
                     <div class="col-xs-12 list-group-item mt-2">
                             <label>Home Url</label>
@@ -171,20 +185,7 @@
                             </div>
 
 
-                            <div class="col-xs-12 list-group-item mt-2">
-                            <label>Facebook </label>
-                            <div style="width: 40px; ">
-                            <input   name="fb"   type="checkbox" onclick="documentFilter(this, '#hideablefb')" />
-                           
-                        </div>
-                        </div>
-
-                        <div class="col-sm-12 mt-1" id="hideablefb"  class="hiddenByDefault">
-                                <div class="form-group">
-                                  
-                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Home Url" name="facebook_url" >
-                                </div>
-                            </div>
+                            
 
 
                             <div class="col-xs-12 list-group-item mt-2">
@@ -202,22 +203,51 @@
                                 </div>
                             </div>
 
-
-                            <div class="col-xs-12 list-group-item mt-2">
-                            <label>Twitter </label>
+                            <div class="col-xs-12  mt-2">
+                            <h4><b>Get Order Details</b></h4>
                             <div style="width: 40px; ">
-                            <input   name="tw"   type="checkbox" onclick="documentFilter(this, '#hideabletw')" />
+                           
                            
                         </div>
                         </div>
 
-                        <div class="col-sm-12 mt-1" id="hideabletw"  class="hiddenByDefault mb-4" >
+                        <div class="col-xs-12 list-group-item mt-2">
+                            <label>Use WhatsApp Order</label>
+                            <div style="width: 40px; ">
+                            <input   name="wp"   type="checkbox" onclick="documentFilter(this, '#hideablewp')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideablewp"  class="hiddenByDefault">
                                 <div class="form-group">
                                   
-                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Twitter Url" name="twitter_url" >
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter WhatsApp Number" name="whatsapp" >
                                 </div>
                             </div>
 
+
+                            <div class="col-xs-12 list-group-item mt-2 mb-2">
+                            <label>Use Credit Card Order</label>
+                            <div style="width: 40px; ">
+                            <input  name="card"   type="checkbox" onclick="documentFilter(this, '#hideablecard')" />
+                           
+                        </div>
+                        </div>
+
+                       <!-- <div class="col-sm-12 mt-1" id="hideablecard"  class="hiddenByDefault">
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Card Number" name="credit" >
+                                </div>
+                            </div> -->
+
+                            <br>
+                        
+
+
+
+                      
 
 
 
@@ -287,24 +317,57 @@
                             <div class="col-xs-12">
                                 <div id="map" style="height:400px;"></div>
                             </div>
+                            <hr>
+                    
 
-                            <div class="col-xs-12 list-group-item mt-2">
-                            <label>Use WhatsApp Order</label>
+                        <!--facebook-->
+                        <div class="col-xs-12 list-group-item mt-2">
+                            <label>Facebook </label>
                             <div style="width: 40px; ">
-                            <input   name="wp"   type="checkbox" onclick="documentFilter(this, '#hideablewp')" />
+                            <input   name="fb"   type="checkbox" onclick="documentFilter(this, '#hideablefb')" />
                            
                         </div>
                         </div>
 
-                        <div class="col-sm-12 mt-1" id="hideablewp"  class="hiddenByDefault">
+                        <div class="col-sm-12 mt-1" id="hideablefb"  class="hiddenByDefault">
                                 <div class="form-group">
                                   
-                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter WhatsApp Number" name="whatsapp" >
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Home Url" name="facebook_url" >
                                 </div>
                             </div>
+
+                            <!--twitter-->
+                            
+                            <div class="col-xs-12 list-group-item mt-2 ">
+                            <label>Twitter </label>
+                            <div style="width: 40px; ">
+                            <input   name="tw"   type="checkbox" onclick="documentFilter(this, '#hideabletw')" />
+                           
+                        </div>
+                        </div>
+
+                        <div class="col-sm-12 mt-1" id="hideabletw"  class="hiddenByDefault mb-4" >
+                                <div class="form-group">
+                                  
+                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Twitter Url" name="twitter_url" >
+                                </div>
+                            </div>
+
+
+                            
                         
 
                         <!---->
+                        <br><br> <br> <br><br>
+                        <div class="col-xs-12  mt-2">
+                            <label></label>
+                            
+                            <div style="width: 40px; ">
+                           
+                           
+                        </div>
+                        </div>
+                        <label></label>
                         <div class="col-xs-12 list-group-item mt-2">
                             <label>Use System Order</label>
                             <div style="width: 40px; ">
@@ -321,20 +384,11 @@
                             </div> -->
 
                             <!---->
-                        <div class="col-xs-12 list-group-item mt-2">
-                            <label>Use Credit Card Order</label>
-                            <div style="width: 40px; ">
-                            <input   name="card"   type="checkbox" onclick="documentFilter(this, '#hideablecard')" />
-                           
-                        </div>
-                        </div>
+                     
 
-                       <!-- <div class="col-sm-12 mt-1" id="hideablecard"  class="hiddenByDefault">
-                                <div class="form-group">
-                                  
-                                    <input tabindex="2" id="pac-input" class="form-control controls" type="text" placeholder="Enter Card Number" name="credit" >
-                                </div>
-                            </div> -->
+
+
+                     
 
 
 
